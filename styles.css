@@ -1,4 +1,3 @@
-
 /* ======================================
    Brand tokens (tweak to your exact palette)
    ====================================== */
@@ -26,47 +25,64 @@ img{max-width:100%;height:auto;display:block;border-radius:12px;}
 a{color:var(--ink);text-decoration:none}
 .container{max-width:var(--maxw);margin-inline:auto;padding:0 20px;}
 .sr-only{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
-/* Header / Nav */
-.topbar{position:sticky;top:0;background:var(--white);z-index:10;border-bottom:1px solid var(--slate);}
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  height: 64px;
-  min-width: 0;
-  flex-wrap: nowrap;
-  overflow: hidden;
-}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700;}
-.brand-logo{
-  /* Hide the old logo box when using an image logo */
-  display: none;
 
-/* Style for the logo image in the menu */
-.brand-logo-img {
-  height: 48px;           /* Slightly smaller for better fit */
-  max-width: 10px;       /* Prevents logo from being too wide */
-  height: 28px;           /* Good height for menu */
-  width: auto;            /* Keep aspect ratio */
-  display: block;
-  margin: 0;
-  border-radius: 4px;     /* Simple, small rounding */
+/* ======================================
+   Header / Nav
+   ====================================== */
+.topbar{
+  position:sticky; top:0; background:var(--white); z-index:10;
+  border-bottom:1px solid var(--slate);
 }
+
+/* Layout: brand | links | mobile CTA  */
+.topbar .nav{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  gap:12px;
+  height:64px;
+  min-width:0;              /* allow center column to shrink */
+  overflow:visible;         /* don't clip content */
 }
+
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;}
+/* Yellow square brand mark (used in footer). Keep available globally. */
+.brand-logo{
+  width:24px;height:24px;border-radius:6px;background:var(--yellow);
+  display:inline-block;position:relative;box-shadow:0 0 0 1px rgba(0,0,0,.06) inset;
+}
+
+/* Hide the square mark only in the topbar since you're using an image there */
+.topbar .brand-logo{ display:none; }
+
+/* Image logo in header */
+.brand-logo-img{
+  height:36px;            /* adjust 32–40px to taste */
+  width:auto;
+  max-width:220px;        /* prevents very wide logos from pushing links */
+  object-fit:contain;
+  display:block;
+  margin:0;
+  border-radius:4px;
+}
+
 .brand-name{font-weight:700;letter-spacing:.3px;}
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: nowrap;
-  flex-shrink: 1;
-  min-width: 0;
-  overflow: hidden;
-  white-space: nowrap;
+/* Links row */
+.nav-links{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:14px;               /* tighter spacing for fit */
+  flex-wrap:nowrap;       /* single line */
+  min-width:0;
+  white-space:nowrap;
 }
-.nav-links a{opacity:.9}
+.nav-links a{
+  padding:8px 8px;        /* slimmer hit area saves width */
+  font-size:15px;
+  opacity:.9;
+}
 
 .btn{
   display:inline-block;padding:12px 18px;border-radius:999px;font-weight:700;
@@ -75,17 +91,23 @@ a{color:var(--ink);text-decoration:none}
 .btn:active{transform:translateY(1px);}
 .btn-primary{background:var(--yellow);color:#111;}
 .btn-outline{border-color:var(--ink)}
-.donate-pill {
-  padding: 10px 16px;
-  background: var(--yellow);
-  border-radius: 999px;
-  font-weight: 800;
-  color: #111;
-  font-size: 15px;
-}
-.nav-cta-mobile{display:none} /* shown on small screens only */
 
-/* Hero */
+/* Donate pill in desktop nav */
+.donate-pill{
+  padding:10px 14px;
+  background:var(--yellow);
+  border-radius:999px;
+  font-weight:800;
+  color:#111;
+  font-size:15px;
+}
+
+/* Mobile-only CTA (hidden on desktop) */
+.nav-cta-mobile{ display:none; }
+
+/* ======================================
+   Hero
+   ====================================== */
 .hero{padding:28px 0 24px;}
 .headline{
   font-size:clamp(28px, 5vw, 48px);
@@ -95,36 +117,40 @@ a{color:var(--ink);text-decoration:none}
 }
 .headline .accent-yellow{color:var(--yellow);}
 .headline .accent-water{
-  color: #8B5C2A; /* Brown color for the word 'water' */
-  /* Multiple waves SVG for a more watery look */
-  background: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg"><path d="M0 30 Q 12.5 35 25 30 T 50 30 T 75 30 T 100 30 V40 H0Z" fill="%238ac6d1"/><path d="M0 35 Q 12.5 40 25 35 T 50 35 T 75 35 T 100 35 V40 H0Z" fill="%2379b8c9"/></svg>') repeat-x;
-  background-size: 100% 100%;
-  background-position: bottom;
-  padding: 0 .18em .18em .18em;
-  border-radius: 0 0 18px 18px;
-  box-decoration-break: clone;
+  color:#8B5C2A; /* Brown tone; adjust if desired */
+  /* Multiple waves SVG for a watery underline */
+  background:url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg"><path d="M0 30 Q 12.5 35 25 30 T 50 30 T 75 30 T 100 30 V40 H0Z" fill="%238ac6d1"/><path d="M0 35 Q 12.5 40 25 35 T 50 35 T 75 35 T 100 35 V40 H0Z" fill="%2379b8c9"/></svg>') repeat-x;
+  background-size:100% 100%;
+  background-position:bottom;
+  padding:0 .18em .18em;
+  border-radius:0 0 18px 18px;
+  box-decoration-break:clone;
 }
-}
+
 .subhead{font-size:clamp(16px, 2.4vw, 20px);max-width:48ch;margin:0 0 20px;opacity:.9;}
 
 .hero-grid{
   display:grid;gap:18px;
   grid-template-columns: 1.25fr .75fr;
 }
-.hero-grid aside{display:grid;gap:18px;grid-template-columns:1fr 1fr;}
-.hero-grid aside img {
-  /* Make all images in the hero aside square */
-  aspect-ratio: 1 / 1; /* Ensures the image holder is square */
-  object-fit: cover;    /* Ensures the image fills the square */
-  width: 100%;          /* Take full width of the grid cell */
-  height: auto;         /* Let browser calculate height, but aspect-ratio keeps it square */
-  background: #e9edf0;  /* Light background for empty space */
-  border-radius: 12px;  /* Rounded corners for images */
+.hero-grid aside{
+  display:grid;gap:18px;grid-template-columns:1fr 1fr;
 }
+.hero-grid aside img{
+  aspect-ratio:1 / 1;
+  object-fit:cover;
+  width:100%;
+  height:auto;
+  background:#e9edf0;
+  border-radius:12px;
+}
+
 .cta-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:6px 0 10px;}
 .trust{font-size:14px;opacity:.85;}
 
-/* Sections */
+/* ======================================
+   Sections
+   ====================================== */
 section{padding:48px 0;border-top:1px solid var(--slate);}
 h2{font-size:clamp(22px,3.2vw,32px);line-height:1.2;margin:0 0 14px;font-weight:800;}
 .lede{max-width:65ch;opacity:.95;margin:0 0 18px;}
@@ -135,26 +161,49 @@ h2{font-size:clamp(22px,3.2vw,32px);line-height:1.2;margin:0 0 14px;font-weight:
 .kpi strong{display:block;font-size:28px;line-height:1.1;}
 .muted{opacity:.75}
 
-/* FAQ */
+/* ======================================
+   FAQ
+   ====================================== */
 details{border:1px solid var(--slate);border-radius:12px;padding:14px 16px;background:#fff;}
 details+details{margin-top:10px;}
 summary{cursor:pointer;font-weight:700;}
 
-/* Donate block */
+/* ======================================
+   Donate block
+   ====================================== */
 .donate{background:var(--ink);color:#fff;border-radius:18px;padding:22px;}
 .donate .btn-primary{background:var(--yellow);color:#111;}
 
-/* Footer */
+/* ======================================
+   Footer
+   ====================================== */
 footer{padding:32px 0;background:#fff;border-top:1px solid var(--slate);font-size:14px;}
 .foot-flex{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
 .links a{margin-right:14px;opacity:.85}
 
-/* Responsive */
+/* ======================================
+   Responsive
+   ====================================== */
+@media (max-width: 1200px){
+  .brand-logo-img{ height:34px; max-width:200px; }
+  .nav-links{ gap:12px; }
+  .nav-links a{ font-size:14.5px; }
+  .donate-pill{ padding:9px 12px; font-size:14.5px; }
+}
+
+@media (max-width: 1040px){
+  .brand-logo-img{ height:32px; max-width:180px; }
+  .nav-links{ gap:10px; }
+  .nav-links a{ font-size:14px; padding:8px 6px; }
+  .donate-pill{ padding:8px 10px; font-size:14px; }
+}
+
+/* Collapse to mobile: hide long menu, keep Donate visible */
 @media (max-width: 960px){
   .hero-grid{grid-template-columns:1fr}
   .grid-3{grid-template-columns:1fr;gap:12px;}
   .kpis{grid-template-columns:1fr;}
-  .nav-links{display:none;}           /* hide long nav */
-  .nav-cta-mobile{display:inline-block;} /* show donate button */
-}
+
+  .nav-links{ display:none; }
+  .nav-cta-mobile{ display:inline-block; }
 }
