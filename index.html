@@ -1,47 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Be the generation that ends the water crisis | charity: water</title>
+
+  <!-- If you have a Proxima Nova webfont kit, paste its <link> here.
+       The CSS already includes a safe fallback stack. -->
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
+  <a class="sr-only" href="#main">Skip to content</a>
+
+  <!-- Top bar / Navigation -->
+  <header class="topbar" aria-label="Primary">
+    <div class="container nav">
+      <div class="brand">
+  <!-- Charity Water logo, horizontal black -->
+  <img src="img/charitywater_logo_horizontal_BlackText.png" alt="Charity Water logo" class="brand-logo-img" />
+      </div>
+
+      <nav class="nav-links" aria-label="Site">
+        <a href="#why">Why Water?</a>
+        <a href="#how">How It Works</a>
+        <a href="#impact">Impact</a>
+        <a href="#stories">Stories</a>
+        <a href="#faq">FAQ</a>
+        <a class="donate-pill" href="#donate">Donate $10</a>
+      </nav>
+
+      <!-- Always-visible Donate on small screens -->
+      <a class="btn btn-primary nav-cta-mobile" href="#donate">Donate $10</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero container" id="home">
+      <h1 class="headline">
+        Be the <span class="accent-yellow">Generation</span> that ends the
+        <span class="accent-water">water</span> crisis
+      </h1>
+      <p class="subhead">
+        $10 today fuels years of safe water. Donate in seconds with Apple Pay or Venmo—
+        100% funds water projects, with updates that prove your impact.
+      </p>
+
+      <div class="hero-grid">
+        <!-- Left: hero image -->
+        <figure>
+          <!-- Hero image for the main section -->
+          <img src="img/Hero.jpg" alt="Charity Water Hero Image" class="hero-image" />
+          <figcaption class="muted">$10 today fuels years of safe water</figcaption>
+        </figure>
+
+        <!-- Right: supporting images (placeholders) -->
+        <aside>
+          <!-- Unsafe water image -->
+          <img src="img/Unsafe water.jpg" alt="Unsafe water" class="unsafe-water-image" />
+          <!-- Jerry can yellow image -->
+          <img src="img/jerry can yellow.jpg" alt="Yellow jerrycan for water" class="jerrycan-yellow-image" />
+          <!-- Desert scene image -->
+          <img src="img/JS_20140424_3157.jpg" alt="Desert scene representing scarcity" class="desert-scene-image" />
+          <!-- Another desert scene image -->
+          <img src="img/Desert scene.jpg" alt="Desert scene" class="desert-scene-image" />
+        </aside>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#donate" aria-label="Donate ten dollars">Be the generation — Give $10</a>
+        <a class="btn btn-outline" href="#donate">Join the Monthly Community</a>
+      </div>
+      <div class="trust">100% of your donation funds water projects. GPS-verified updates show where your gift goes.</div>
     </section>
 
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
-    </section>
-
-    <!-- Real-World Impact Story Section -->
-    <section class="impact-story">
-        <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
-            </p>
+    <!-- WHY WATER -->
+    <section id="why">
+      <div class="container">
+        <h2>Why Water?</h2>
+        <p class="lede">
+          Clean water changes everything—health, education, and income. Your gift helps bring
+          reliable, safe water to communities that need it most.
+        </p>
+        <div class="kpis">
+          <div class="kpi">
+            <strong>100%</strong>
+            <span class="muted">donor-funded projects</span>
+          </div>
+          <div class="kpi">
+            <strong>GPS</strong>
+            <span class="muted">verified reporting</span>
+          </div>
+          <div class="kpi">
+            <strong>Seconds</strong>
+            <span class="muted">to donate on mobile</span>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Call-to-Action Section: This encourages visitors to take action -->
-    <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
+    <!-- HOW IT WORKS -->
+    <section id="how">
+      <div class="container">
+        <h2>How It Works</h2>
+        <p class="lede">Simple, transparent, proven.</p>
+        <div class="grid-3">
+          <div class="card">
+            <h3>1) You Give</h3>
+            <p>Fast checkout with Apple Pay or Venmo makes it easy to turn $10 into years of impact.</p>
+          </div>
+          <div class="card">
+            <h3>2) 100% Funds Projects</h3>
+            <p>Your donation goes straight to clean water projects—no overhead taken from your gift.</p>
+          </div>
+          <div class="card">
+            <h3>3) See the Results</h3>
+            <p>Get updates with GPS coordinates and photos so you know exactly where your help went.</p>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <!-- IMPACT -->
+    <section id="impact">
+      <div class="container">
+        <h2>Impact you can feel</h2>
+        <p class="lede">From muddy to crystal clear—your gift moves families from risk to resilience.</p>
+        <div class="grid-3">
+          <figure class="card">
+            <!-- Hands in muddy water image -->
+            <img src="img/hands in muddy water.jpg" alt="Hands in muddy water" />
+            <figcaption class="muted">Before: unsafe water</figcaption>
+          </figure>
+          <figure class="card">
+            <!-- Boy with clean water image -->
+            <img src="img/boy with clean water.jpg" alt="Boy with clean water" />
+            <figcaption class="muted">After: years of safe water</figcaption>
+          </figure>
+          <div class="card donate">
+            <h3>Ready to help?</h3>
+            <p>Even $10 today fuels years of safe water for someone who needs it.</p>
+            <p><a class="btn btn-primary" href="#donate">Give $10</a></p>
+            <small>Prefer monthly? Join the community below.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORIES -->
+    <section id="stories">
+      <div class="container">
+        <h2>Stories</h2>
+        <p class="lede">Real people. Real change. Replace these placeholders with your project photos.</p>
+        <div class="grid-3">
+          <article class="card">
+            <img src="https://placehold.co/900x560?text=Story+Image+1" alt="Story image 1" />
+            <h3>Hope at the new well</h3>
+            <p class="muted">A village’s first reliable water source unlocks time for school and work.</p>
+          </article>
+          <article class="card">
+            <img src="https://placehold.co/900x560?text=Story+Image+2" alt="Story image 2" />
+            <h3>From hours to minutes</h3>
+            <p class="muted">Shorter walks for water mean more time with family and friends.</p>
+          </article>
+          <article class="card">
+            <img src="https://placehold.co/900x560?text=Story+Image+3" alt="Story image 3" />
+            <h3>Clean water, healthy kids</h3>
+            <p class="muted">Fewer waterborne illnesses keep classrooms full and futures bright.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <h2>FAQ</h2>
+        <details>
+          <summary>Does 100% of my gift really fund water projects?</summary>
+          <p>Yes. The 100% Model ensures your donation goes directly to water projects.</p>
+        </details>
+        <details>
+          <summary>How will I see where my gift goes?</summary>
+          <p>You’ll receive updates with GPS coordinates and stories from the field.</p>
+        </details>
+        <details>
+          <summary>Can I give monthly?</summary>
+          <p>Absolutely—join our monthly community in the donate section below.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- DONATE -->
+    <section id="donate">
+      <div class="container">
+        <div class="donate">
+          <h2>Be the generation — Give $10</h2>
+          <p class="lede">Fast, secure, mobile checkout. Replace this block later with your real form or payment widget.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#donate">Donate $10</a>
+            <a class="btn btn-outline" href="#donate">Join Monthly</a>
+          </div>
+          <small class="muted">100% of your donation funds water projects.</small>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container foot-flex">
+      <div class="brand">
+        <span class="brand-logo" aria-hidden="true"></span>
+        <span class="brand-name">charity: water</span>
+      </div>
+      <div class="links">
+        <a href="#why">Why Water?</a>
+        <a href="#how">How It Works</a>
+        <a href="#impact">Impact</a>
+        <a href="#faq">FAQ</a>
+        <a href="#donate">Donate</a>
+      </div>
+      <small class="muted">© 2025 charity: water — 100% Model. GPS-verified updates.</small>
+    </div>
+  </footer>
 </body>
 </html>
