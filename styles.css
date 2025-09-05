@@ -1,3 +1,4 @@
+
 /* ======================================
    Brand tokens (tweak to your exact palette)
    ====================================== */
@@ -9,6 +10,7 @@
   --white:  #ffffff;           /* Crisp White – background */
   --maxw:   1160px;
   --radius: 16px;
+}
 
 /* Base */
 html,body{margin:0;padding:0;background:var(--white);color:var(--ink);}
@@ -19,33 +21,51 @@ body{
   font-size:16px;
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
+}
 img{max-width:100%;height:auto;display:block;border-radius:12px;}
 a{color:var(--ink);text-decoration:none}
 .container{max-width:var(--maxw);margin-inline:auto;padding:0 20px;}
 .sr-only{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;}
-
 /* Header / Nav */
 .topbar{position:sticky;top:0;background:var(--white);z-index:10;border-bottom:1px solid var(--slate);}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  height: 64px;
+  min-width: 0;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700;}
 .brand-logo{
   /* Hide the old logo box when using an image logo */
   display: none;
-}
 
 /* Style for the logo image in the menu */
 .brand-logo-img {
-  height: 64px;        /* Match the menu height */
-  max-width: 100%;     /* Responsive: don't overflow container */
-  width: auto;         /* Keep aspect ratio */
+  height: 48px;           /* Slightly smaller for better fit */
+  max-width: 10px;       /* Prevents logo from being too wide */
+  height: 28px;           /* Good height for menu */
+  width: auto;            /* Keep aspect ratio */
   display: block;
-  border-radius: 6px;  /* Slightly rounded corners */
-  object-fit: contain; /* Ensure the logo fits nicely */
+  margin: 0;
+  border-radius: 4px;     /* Simple, small rounding */
 }
 }
 .brand-name{font-weight:700;letter-spacing:.3px;}
 
-.nav-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  flex-shrink: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
 .nav-links a{opacity:.9}
 
 .btn{
@@ -55,7 +75,14 @@ a{color:var(--ink);text-decoration:none}
 .btn:active{transform:translateY(1px);}
 .btn-primary{background:var(--yellow);color:#111;}
 .btn-outline{border-color:var(--ink)}
-.donate-pill{padding:12px 20px;background:var(--yellow);border-radius:999px;font-weight:800;color:#111;}
+.donate-pill {
+  padding: 10px 16px;
+  background: var(--yellow);
+  border-radius: 999px;
+  font-weight: 800;
+  color: #111;
+  font-size: 15px;
+}
 .nav-cta-mobile{display:none} /* shown on small screens only */
 
 /* Hero */
@@ -68,8 +95,15 @@ a{color:var(--ink);text-decoration:none}
 }
 .headline .accent-yellow{color:var(--yellow);}
 .headline .accent-water{
-  background:linear-gradient(180deg, transparent 55%, var(--blue) 56%);
-  padding:0 .12em;
+  color: #8B5C2A; /* Brown color for the word 'water' */
+  /* Multiple waves SVG for a more watery look */
+  background: url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg"><path d="M0 30 Q 12.5 35 25 30 T 50 30 T 75 30 T 100 30 V40 H0Z" fill="%238ac6d1"/><path d="M0 35 Q 12.5 40 25 35 T 50 35 T 75 35 T 100 35 V40 H0Z" fill="%2379b8c9"/></svg>') repeat-x;
+  background-size: 100% 100%;
+  background-position: bottom;
+  padding: 0 .18em .18em .18em;
+  border-radius: 0 0 18px 18px;
+  box-decoration-break: clone;
+}
 }
 .subhead{font-size:clamp(16px, 2.4vw, 20px);max-width:48ch;margin:0 0 20px;opacity:.9;}
 
